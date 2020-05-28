@@ -1,144 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Звіт по практиці</h1>
-    <p>
-        
-        Вступ. Мною, студентом 4 курсу факультету математики та інформатики спеціальності «Комп’ютерні науки та інформаційні технології» Костишина Захара Богдановича, в період з 27.01.2020 р. по 06.03.2020 р. відповідно до наказу_________________________________.Прикарпатського Національного Університету  імені Василя Стефаника, з закріплення знань, отриманих під час навчання, адаптації до умов роботи, цілеспрямованого формування більш ґрунтовних професійних знань, нових практичних навичок та умінь необхідних для виконання завдань, була пройдена виробнича практика на посаді інженера - програміста.
-Вивчення діяльності підприємства. Webmil - це компанія, що спеціалізується на повному циклі розробки веб-рішень. Наша сфера знань: консалтинг та бізнес-аналіз, розробка веб- та мобільних пристроїв, UX-дизайн, створення візуальної ідентичності. Адреса компанії: м. Івано-Франківськ вул. Євгена Коновальця, 35. Тел. +38 096 023 63 63.
-Зміст практики. Разом з керівником від бази практики був складений план роботи, в якому було визначено мої індивідуальні завдання, які слід виконати і встановлено термін їх виконання.
-Індивідуальні завдання:
-Основними завданнями були:
-Розробка веб-застосунку «Інтернет магазин» з використанням стеку технологій: Spring Boot, Spring Security, Spring Data, React.js, MySQL.
- Серверна частина (back-end)
- Клієнтська частина (front-end)
-Опис.
-Для написання серверної частини було використано Spring Boot, Spring Security, Spring Data, JWT
-Spring Framework
-Це програмний каркас (фреймворк) з відкритим кодом та контейнери з підтримкою інверсії управління для платформи Java.
-Модулі
-Spring Framework складається з кількох модулів, які надають широкий спектр послуг:
-Контейнер Інверсії управління: Конфігурація компонентів додатків і управління життєвим циклом об'єктів Java, здійснюється головним чином через Інверсію управління
-Аспектно-орієнтоване програмування: дозволяє реалізувати наскрізні процедури
-Доступ до даних: робота з реляційною системою управління базами даних на платформі Java з використанням JDBC і об'єктно-реляційні відображення та інструментів з NoSQL баз даних
-Управління транзакціями: об'єднує кілька API, управління транзакціями та координує операції для Java-об'єктів
-Модель-Вигляд-Управління (Model-View-Controller): програмний каркас на основі HTTP сервлета, що забезпечує створення веб-додатків і веб-служб RESTful.
-Аутентифікація і авторизація: налаштовувані процеси безпеки, які підтримують цілий ряд стандартів, протоколів, інструментів і практик за допомогою проекту Spring Security (колишня система безпеки АсеrІ для Spring).
-Віддалене керування: конфігураційний вплив і управління Java-об'єктами для місцевої (локальної) або віддаленої конфігурації через JMX
-Тестування: підтримка класів для написання юніт-тестів та інтеграційних тесті.
-Інверсія керування - це принцип побудови програми, при якому її частини отримують потік керування (викликаються) із загальної спільно використовувані бібліотеки. Це ніби звичайне процедурне програмування вивернуте навиворіт (inverse). Однією з реалізацій IoC є впровадження залежностей (англ. Dependency Injection), що використовується в багатьох фреймворках, вони називаються IoC контейнери. 
-Принцип інверсії залежностей
-Модулі верхніх рівнів не повинні залежати від модулів нижчих рівнів. Обидва типа модулів повинні залежати від абстракцій. Абстракції не повинні залежати від деталей. Деталі повинні залежати від абстракцій.
-Клас X залежить від класу Y, якщо виконується одна з наступних умов:
-X містить (has-a) Y
-X є (is-a) Y
-X залежить від деякого класу Z, який залежить від Y (принцип транзитивності)
-X залежить від Y не означає, що Y залежить від X. Якщо ж існують обидві залежності, то це називається циклічною залежністю: X не може бути використаний без Y, та навпаки. Існування великого числа циклічних залежностей в об'єктно-орієнтованій програмі може бути показником неоптимальної будови програми.
-Розрив залежності
-Якщо об'єкт x (класу X) викликає методи об'єкту y (класу Y), то X залежить від Y. Залежність може бути звернена створенням третього класу, а саме інтерфейсного класу I, який повинен містити в собі усі методи, які x може викликати у об'єкта y. Крім того, Y повинен реалізовувати інтерфейс I. X та Y наразі обидва залежать від I, і клас X більш не залежить від класу Y; передбачається, що X не реалізує I. Це виключення залежності класу X від Y шляхом створення інтерфейсу I і називається Inversion of Control. Слід сказати, що Y може залежати від інших класів. До внесення змін X залежав від Y, тоді X побічно залежав від усіх класів, від яких залежить Y. За допомогою застосування Inversion of Control всі побічні залежності були розірвані — не тільки залежність X від Y.
-Основні особливості Spring Framework можуть бути використані будь-яким додатком Java, але є розширення для створення веб-додатків на платформі Java EE. Незважаючи на це, Spring Framework не нав'язує якоїсь конкретної моделі програмування, Spring Framework став популярним в спільноті Java як альтернатива, або навіть доповнення моделі Enterprise JavaBean (EJB).
-Spring Security 
-Це Java / JavaEE framework, що надає механізми побудови систем аутентифікації та авторизації, а також інші можливості забезпечення безпеки для корпоративних додатків, створених за допомогою Spring Framework. Проект був розпочатий Беном Алексом (Ben Alex) в кінці 2003 року під ім'ям «Acegi Security», перший реліз вийшов в 2004 році. Вперше публічно представлений під новим ім'ям Spring Security 2.0.0 в квітні 2008 року. В роботі із Spring Security я використовував JSON Web Token.
-JSON Web Token (JWT) - це відкритий стандарт (RFC 7519) для створення токенов доступу, заснований на форматі JSON. Як правило, використовується для передачі даних для аутентифікації в клієнт-серверних додатках. Токени створюються сервером, підписуються секретним ключем і передаються клієнту, який в подальшому використовує даний токен для підтвердження своєї особи.
-Java Persistence API
-Стандартизований інтерфейс для Java ORM фреймворків. Є частиною EJB 3 та J2EE 5, хоча може використовуватись незалежно від них. Виник через популярність вільного ORM фреймворку Hibernate, та бажання мати незалежний від конкретної реалізації стандарт.
-Entity (сутність/утворення) — об'єкт для якого забезпечується ORM. Класи Entity задаються аннотацією @Entity або перелічуються у XML дескрипторі. Клас Entity повинен мати конструктор без аргументів, з рівнем доступу — public або protected. Якщо сутність передається як віддалений об'єкт (remote object), вона має реалізувати інтерфейс Serializable. Клас Entity не може бути завершеним (final) або мати завершені методи.
-Hibernate 
-Засіб відображення між об'єктами та реляційними структурами (object-relational mapping, ORM) для платформи Java. Hibernate є вільним програмним забезпеченням, яке поширюється на умовах GNU Lesser General Public License. Hibernate надає легкий для використання каркас (фреймворк) для відображення між об'єктно-орієнтованою моделлю даних і традиційною реляційною базою даних. Метою Hibernate є звільнення розробника від значних типових завдань із програмування взаємодії з базою даних. Розробник може використовувати Hibernate як при розробці з нуля, так і для вже існуючої бази даних. Hibernate піклується про зв'язок класів з таблицями бази даних (і типів даних мови програмування із типами даних SQL), і надає засоби автоматичної побудови SQL запитів й зчитування/запису даних, і може значно зменшити час розробки, який зазвичай витрачається на ручне написання типового SQL і JDBC коду. Hibernate генерує SQL виклики і звільняє розробника від ручної обробки результуючого набору даних, конвертації об'єктів і забезпечення сумісності із різними базами даних. Hibernate забезпечує прозору підтримку збереження даних, тобто їхньої персистентності (англ. persistence) для «POJO»-об'єктів, себто для звичайних Java-об'єктів; єдина сувора вимога до класу, що зберігається — конструктор за умовчанням (Для коректної поведінки у деяких застосуваннях потрібно приділити особливу увагу до методів equals() і hashCode()).
-Чому було обрано саме Spring.
-Гнучким бібліотекам Spring довіряють розробники в усьому світі. Spring дарує чудовий досвід мільйонам кінцевих споживачів щодня - будь то потокове телебачення, підключені автомобілі, інтернет-магазини чи безліч інших інноваційних рішень. Spring також має внески від усіх великих імен у галузі техніки, включаючи Alibaba, Amazon, Google, Microsoft тощо.
-Гнучкий та всебічний набір розширень та бібліотеки сторонніх виробників дозволяють розробникам створювати практично будь-які програми, які можна уявити. По суті, функції Inversion of Control (IoC) та залежної інжекції (DI) Spring Framework створюють основу для широкого набору можливостей та функціональності. Незалежно від того, чи будуєте ви безпечні, реактивні, хмарні мікросервіси для Інтернету чи складні потокові потоки даних для підприємства, Spring має інструменти, які допоможуть.
-З весною ви помітите за замовчуванням швидкий запуск, швидке відключення та оптимізоване виконання. Все частіше Spring проекти також підтримують реактивну (неблокуючу) модель програмування для ще більшої ефективності. Вбудовані веб-сервери, автоматична конфігурація допомагають швидко розпочати роботу
-Для написання клієнтської частини було використано наступний стек технологій: React.js, Redux, для стилізації сторінок – semantic-ui React.
-React  — відкрита JavaScript бібліотека для створення інтерфейсів користувача, яка покликана вирішувати проблеми часткового оновлення вмісту веб-сторінки, з якими стикаються в розробці односторінкових застосунків. Розробляється Facebook, Instagram і спільнотою індивідуальних розробників.
-React дозволяє розробникам створювати великі веб-застосунки, які використовують дані, котрі змінюються з часом, без перезавантаження сторінки. Його мета полягає в тому, щоб бути швидким, простим, масштабованим. React обробляє тільки користувацький інтерфейс у застосунках. Це відповідає видові у шаблоні модель-вид-контролер (MVC), і може бути використане у поєднанні з іншими JavaScript бібліотеками або в великих фреймворках MVC, таких як AngularJS[6]. Він також може бути використаний з React на основі надбудов, щоб піклуватися про частини без користувацького інтерфейсу побудови веб-застосунків. Як бібліотеку інтерфейсу користувача React найчастіше використовують разом з іншими бібліотеками, такими як Redux.
-В даний час React використовують Khan Academy, Netflix, Yahoo, Airbnb, Sony, Atlassian та інші.
-	Особливості
-Одностороння передача даних
-Властивості передаються в рендерер компоненту, як властивості html тега. Компонент не може напряму змінювати властивості, що йому передані, але може їх змінювати через callback функції. Такий механізм називають «властивості донизу, події нагору».
-Віртуальний DOM
-React підтримує віртуальний DOM, а не покладається виключно на DOM браузера. Це дозволяє бібліотеці визначити, які частини DOM змінилися, порівняно (diff) зі збереженою версією віртуального DOM, і таким чином визначити, як найефективніше оновити DOM браузера. Таким чином програміст працює зі сторінкою, вважаючи що вона оновлюється вся, але бібліотека самостійно вирішує які компоненти сторінки треба оновити.
- 
-<p>
-JSX
-Компоненти React зазвичай написані на JSX. Код написаний на JSX компілюється у виклики методів бібліотеки React. Розробники можуть так само писати на чистому JavaScript. JSX нагадує іншу мову, яку створили у компанії Фейсбук для розширення PHP, XHP.
-Не лише рендеринг HTML в браузері
-React використовують не лише для рендерингу HTML в браузері. Наприклад, Facebook має динамічні графіки які рендеряться в теги <canvas>, Netflix та PayPal використовують ізоморфне завантаження для рендерингу ідентичного HTML на сервері та клієнті.
-Методи життєвого циклу
-Методи життєвого циклу – це різні методи, які вбудовуються за допомогою ReactJS. Вони дозволяють розробнику обробляти дані в різних точках життєвого циклу програми React. Наприклад:
-shouldComponentUpdate – це метод життєвого циклу, який каже Javascript оновити компонент, використовуючи логічні змінні.
-componentWillMount – це метод життєвого циклу, який каже Javascript налаштувати певні дані перед монтуванням компонентів (вставлення у віртуальний DOM).
-componentDidMount – це метод життєвого циклу, подібний до компонента WillMount, за винятком того, що він працює після методу render, і може використовуватися для додавання JSON-даних, а також для визначення властивостей та станів.
-render є найважливішим методом життєвого циклу, необхідним у будь-якому компоненті. Метод render – це те, що з'єднується з JSX і відображати власний JSX.
-</p>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Mountain King - Bootstrap Template</title>
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/theme.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="style.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700,100' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Raleway:300,700,900,500' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.7/typicons.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/pushy.css">
+        <link rel="stylesheet" href="assets/css/masonry.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/odometer-theme-default.css">
+        <script>
+        window.odometerOptions = {
+          selector: '.odometer',
+          format: '(,ddd)', // Change how digit groups are formatted, and how many digits are shown after the decimal point
+          duration: 13000, // Change how long the javascript expects the CSS animation to take
+          theme: 'default'
+        };
+        </script>
+    </head>
+    <body class="">
+      <!-- Site Overlay -->
+      <div class="site-overlay"></div>
 
-<p>
-Вкладені елементи
-Кілька елементів на одному рівні повинні бути загорнутими в один елемент контейнера, наприклад елемент <div>, або повернутий як масив.
-Атрибути
-JSX надає ряд атрибутів елементів, призначених для відображення тих, що надаються у форматі HTML. Користувацькі атрибути також можуть бути передані компоненту. Всі атрибути будуть отримані компонентом як реквізит.
-Вирази JavaScript
-Вирази JavaScript можна використовувати в JSX з фігурними дужками {}:
-Redux
-Redux - відкрита JavaScript бібліотека призначена для управління станом програми. Найчастіше використовується разом з React або Angular для побудови інтерфейсів користувача.
-Основна концепція
-Єдине джерело істини
-Redux зберігає cтан всього застосунку в дереві об'єктів в одному сховищі. Одне дерево станів полегшує налагодження або перевірку програми; це також дозволяє зберігати стан вашого застосунку в процесі розробки, для прискорення циклу розробки.
-Стан призначений тільки для читання
-Єдиний спосіб змінити стан - це виокремити дію, об'єкт, що описує те, що сталося. Це гарантує, що ні перегляди, ні зворотні виклики мережі ніколи не будуть змінювати стан. Натомість вони виражають тільки намір це зробити. Всі зміни - централізовані і відбуваються одна за іншою у чіткій послідовності. Оскільки дії є простими об'єктами, вони можуть бути зареєстровані, серіалізовані, збережені та пізніше відтворені для налагодження або тестування.
-Зміни за допомогою чистих функцій
-Редьюсери - це лише чисті функції, які приймають попередній стан і дію, і повертають наступний стан. В процесі розробки редьюсери можуть бути розділені на дрібніші редюсери, які управляють певними частинами дерева станів. Оскільки редьюсери - це лише функції, ви можете контролювати порядок їх надсилання, передавати додаткові дані або навіть створювати повторювані редьюсери для звичайних завдань, таких як розбиття на сторінки.
-</p>
-<p>
-Технологія розробки програмного забезпечення.
-Веб-застосунок надає можливість користувачу зареєструватись на сайті, та вибирати покупки ( мобільні телефони ), редагувати корзину покупок, редагувати свій профіль, також присутній функціонал фільтрів для продуктів. Серверна частина, реалізована на Spring Boot. За допомогою Spring Data JPA здійсювались запити до Бази Даних. Авторизація та аутентифікація реалізовані за допомогою Spring Security. Також здійснена реалізація Адмін частини, де користувач, якому надані Адмін права може видаляти з бази даних продукти, добавляти нові, та переглядати список користувачів.
-Структура бази даних:
-У базі даних представленні такі таблиці: users, chat, message, mobile_phone, roles, shopping_cart. Також 3 таблиці які створенні за допомогою співвідношення OneToOne та ManyToMany 
-Таблиця users має наступні поля:
-id (це поле є автоінкрементоване, тобто при додаванні наступного поля воно буде збільшувати свій ідентифікатор на один)
-email (поле має тип VARCHAR)
-first_name (тип VARCHAR)
-last_name (тип VARCHAR)
-image (BLOB ( масив двійкових даних ) використовується для зберігання великих даних наприклад фотографій )
-username (тип VARCHAR )
-password (тип VARCHAR )
-shopping_cart_id (це ключ поля таблиці shopping_cart, за допомогою якого зв’язуються дві таблиці
-Таблиця shopping_cart має наступні поля
-id  це поле є автоінкрементоване, тобто при додаванні наступного поля воно буде збільшувати свій ідентифікатор на один)
-shopping_cart_identifier (VARCHAR)
-Таблиця carts_mobiles таблиця яка складена за допомогою співвідношення ManyToMany що означає, що кожна корзина може містити багато телефонів, в свою чергу телефон може належати багатьом корзинам. У цій таблиці містяться всього два поля, вони є ідентифікаторами двох таблиць : Shopping_Cart та Mobile_Phone.
-Таблиця Mobile_Phone містить наступні поля:
-id (це поле є автоінкрементоване, тобто при додаванні наступного поля воно буде збільшувати свій ідентифікатор на один)
-brand (VARCHAR)
-graduation_year (VARCHAR)
-mobile_identifier (VARCHAR)
-model (VARCHAR)
-price (DOUBLE)
-image (BLOB – опис типу було згадано вище у звіті)
-chat_id(поле яке зв’язує дві таблиці chat та mobile_phone , відношенням OneToOne)
-Таблиця chat містить поле ідентифікатора для зв’язування чату з таблицею message
-Таблиця message містить наступні поля:
-id (це поле є автоінкрементоване, тобто при додаванні наступного поля воно буде збільшувати свій ідентифікатор на один)
-date (VARCHAR)
-message(VARCHAR)
-username(VARCHAR)
-message_reply_id (це поле є посиланням таблиці на саму себе, тобто message може бути відповіддю на інший message)
-Таблиця chat_message створена в результаті складення відношення між таблицями за допомогою OneToMany що означає, один чат може мати багато меседжів. В ній представлені ідентифікатори двох таблиць: Chat, Message.
-Таблиця roles створена вручну за допомогою SQL інструкції, вона виконує роль надання користувачеві певних прав доступу при реєстрації. По замовчуванню користувач має права доступу USER.
-Таблиця user_roles створена за допомогою анотації ManyToMany вона з’єднує дві таблиці user та roles.
-</p>
-<p>
-Висновки.
-При проходженні практики я отримав практичні навички роботи на реальному проекті, удосконалив знання в наступних технологіях: Spring Boot, Srping Security, JWT Token, Spring Data, Hibernate, Базою даних – MySQL, а також з технологіями, які відповідають побудові клієнтської частини проекту React.js та Redux. На основі даних технологій був створений веб-застосунок Інтернет магазин. Знання, які я здобув під час практики, будуть використовуватись в подальшій моїй роботі.
-
-Студент-практикант:                      __________                   Костишин З.Б 
-"___" березня 2020 р.
-
-</p>
-</body>
+        <header id="home">
+            <div class="container-fluid">
+                <!-- change the image in style.css to the class header .container-fluid [approximately row 50] -->
+                    <div class="jumbotron">
+                        <h1><strong>Практика</strong></h1>
+                        <p>Розробка інтерактивного онлайн магазину</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section id="feat">
+            <div class="container">
+                <div class="row features">
+                    <div class="col-md-6 text-center wow fadeInUp" data-wow-delay="100ms">
+                        <span class="typcn typcn-pencil x3"></span>
+                        <a href="https://github.com/king-hacki/shop">
+                            <h4>Backend GitHub</h4>
+                        </a>
+                    </div>
+                    <div class="col-md-6 text-center wow fadeInUp" data-wow-delay="500ms">
+                        <span class="typcn typcn-bookmark x3"></span>
+                        <a href="https://github.com/king-hacki/shop_client">
+                            <h4>Frontend GitHub</h4>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- <section id="about" class="number wow fadeInUp" data-wow-delay="300ms">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 opaline col-md-offset-6">
+                            <div class="row">
+                                <div class="col-md-offset-1 col-md-10">
+                                    <h3>Ligula Mattis Ornare Ultricies</h3>
+                                    <h5>Pellentesque Cursus Amet Parturient Etiam</h5>
+                                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <div class="col-md-4 boxes col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-1 col-md-offset-1 col-sm-6 wow fadeInUp">
+                                    <h5>Ultricies</h5>
+                                    <h3 class="odometer 01">00000</h3>
+                                </div>
+                                <div class="col-md-4 boxes col-xs-6 col-xs-offset-3 col-lg-4 col-lg-offset-2 col-md-offset-2 col-sm-6 wow fadeInUp" data-wow-delay="300ms">
+                                    <h5>Fermentum</h5>
+                                    <h3 class="odometer 02">00000</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- <section id="news" class="blog wow fadeInUp" data-wow-delay="300ms">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-11">
+                        <h2>Розробка інтернет магазину для для </h2>
+                        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec sed odio dui. Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod.</p>
+                        <p>Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nulla vitae elit libero, a pharetra augue.</p>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- <section id="history" class="story wow fadeInUp" data-wow-delay="300ms">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 opaline">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <p class="lead"><i>Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</i></p>
+                                    <p><i>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</i></p>
+                                    <h6 class="lead"> – Fermentum Dapibus</h6>
+                                    <p><small>Nibh Etiam Risus Bibendum<br>
+        Nullam id dolor id nibh ultricies vehicula ut id elit.</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <section id="photos" class="gallery wow fadeInUp" data-wow-delay="300ms">
+            <div class="container">
+                <div class="row">
+                    <div class="masonry image-gallery">
+                        <div class="grid-sizer"></div>
+                        <div class="gutter-sizer"></div>
+                        <div class="item item-width2">
+                            <a href="https://unsplash.it/1000/600?image=529">
+                              <img src="https://unsplash.it/600/300?image=529" alt="" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://unsplash.it/1000/600?image=523">
+                              <img src="https://unsplash.it/320/776?image=523" alt="" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://unsplash.it/600/1000?image=503">
+                              <img src="https://unsplash.it/500/800?image=503" alt="" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://unsplash.it/1000/600?image=505">
+                              <img src="https://unsplash.it/400/400?image=505" alt="" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://unsplash.it/800/800?image=454">
+                              <img src="https://unsplash.it/4403/2476?image=454" alt="" />
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="https://unsplash.it/800/800?image=515">
+                              <img src="https://unsplash.it/585/439?image=515" alt="" />
+                            </a>
+                        </div>
+                        <div class="item item-width2">
+                            <a href="https://unsplash.it/1000/600?image=451">
+                              <img src="https://unsplash.it/600/140?image=451" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="clients wow fadeInUp" data-wow-delay="300ms">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-xs-10">
+                        <a href="https://webmil.eu/">
+                            <img src="images/webmil.png" class="img-responsive" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- <section id="contact" class="prefooter wow fadeInUp" data-wow-delay="300ms">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h3>Maecenas sed diam eget risus varius<br> blandit sit amet non magna.</h3>
+                            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Your Email Here...">
+                                    <br>
+                                    <button type="button" class="btn btn-danger">Submit Newsletter</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3>Practice</h3>
+                        <p>© 2020 Practice Project
+                    </div>
+                    <div class="col-md-4">
+                        <p class="text-right social"><i class="typcn typcn-social-facebook-circular"></i><i class="typcn typcn-social-twitter-circular"></i><i class="typcn typcn-social-tumbler-circular"></i><i class="typcn typcn-social-github-circular"></i><i class="typcn typcn-social-dribbble-circular"></i></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/js/bootstrap-scrollspy.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+        <script src="http://masonry.desandro.com/masonry.pkgd.js"></script>
+        <script src="assets/js/masonry.js"></script>
+        <script src="assets/js/pushy.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+        <script src="assets/js/odometer.js"></script>
+    </body>
 </html>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-34344036-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
